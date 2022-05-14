@@ -4,3 +4,9 @@ C:\Users\Redteam\Source\Repos\ParentHollowInjection\ParentHollowInjection\bin\x6
 C:\Users\Redteam\Source\Repos\ParentHollowInjection\ParentHollowInjection\bin\x64\Release\ParentHollowInjection.pdb
 C:\Users\Redteam\Source\Repos\ParentHollowInjection\ParentHollowInjection\obj\x64\Release\ParentHollowInjection.exe
 C:\Users\Redteam\Source\Repos\ParentHollowInjection\ParentHollowInjection\obj\x64\Release\ParentHollowInjection.pdb
+C:\Users\Redteam\Desktop\CsharpProjects\ParentHollowInjection\ParentHollowInjection\bin\x64\Release\ParentHollowInjection.exe.config
+C:\Users\Redteam\Desktop\CsharpProjects\ParentHollowInjection\ParentHollowInjection\bin\x64\Release\ParentHollowInjection.exe
+C:\Users\Redteam\Desktop\CsharpProjects\ParentHollowInjection\ParentHollowInjection\bin\x64\Release\ParentHollowInjection.pdb
+C:\Users\Redteam\Desktop\CsharpProjects\ParentHollowInjection\ParentHollowInjection\obj\x64\Release\ParentHollowInjection.csproj.CoreCompileInputs.cache
+C:\Users\Redteam\Desktop\CsharpProjects\ParentHollowInjection\ParentHollowInjection\obj\x64\Release\ParentHollowInjection.exe
+C:\Users\Redteam\Desktop\CsharpProjects\ParentHollowInjection\ParentHollowInjection\obj\x64\Release\ParentHollowInjection.pdb

